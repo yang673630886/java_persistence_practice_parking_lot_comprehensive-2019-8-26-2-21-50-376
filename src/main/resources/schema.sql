@@ -22,7 +22,7 @@ INSERT INTO `parkingboy` VALUES ('2', 'caoyupeng', '18');
 DROP TABLE IF EXISTS `parkinglot`;
 CREATE TABLE `parkinglot` (
   `parkinglot_id` int(11) NOT NULL,
-  `parkinglot_capasity` int(11) DEFAULT NULL,
+  `parkinglot_capacity` int(11) DEFAULT NULL,
   `parkinglot_available_position_count` int(11) DEFAULT NULL,
   `parkingboy_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`parkinglot_id`),

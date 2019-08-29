@@ -30,7 +30,7 @@ public class ParkingBoy {
 	}
 
 	public ParkingBoy(int parkingBoyId, String parkingBoyName, int parkingBoyAge) {
-		super();
+
 		this.parkingBoyId = parkingBoyId;
 		this.parkingBoyName = parkingBoyName;
 		this.parkingBoyAge = parkingBoyAge;
