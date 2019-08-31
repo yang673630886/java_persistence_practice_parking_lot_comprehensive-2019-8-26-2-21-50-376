@@ -33,7 +33,7 @@ public class ParkingBoyTest {
     }
 	
 	@Test
-	public void should_return_parkingboy_when_selectAllParkingBoys_given_1_zhangsan_21() {
+	public void should_return_parkingboy_when_selectAllParkingBoys_given_12_zhangsan_21() {
 		// given
         jdbcTemplate.execute("INSERT INTO parkingboy VALUES(12,'zhangsan', 21);");
         
@@ -42,6 +42,21 @@ public class ParkingBoyTest {
         
         // then
         assertEquals("zhangsan", parkingBoys.get(11).getParkingBoyName());
+        assertEquals(12, parkingBoys.get(11).getParkingBoyId());
+        assertEquals(21, parkingBoys.get(11).getParkingBoyAge());
+	}
+	
+	@Test
+	public void should_return_parkingboy_when_addParkingBoy_given_12_zhangsan_21() {
+		//given
+		ParkingBoy parkingBoy = new ParkingBoy(12,"zhangsan", 21);
+		
+		//when
+		parkingBoyMapper.addParkingBoy(parkingBoy);
+		List<ParkingBoy> parkingBoys = parkingBoyMapper.selectAllParkingBoys();
+		
+		//then
+		assertEquals("zhangsan", parkingBoys.get(11).getParkingBoyName());
         assertEquals(12, parkingBoys.get(11).getParkingBoyId());
         assertEquals(21, parkingBoys.get(11).getParkingBoyAge());
 	}

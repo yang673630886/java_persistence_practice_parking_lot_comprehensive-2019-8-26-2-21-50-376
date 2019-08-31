@@ -2,6 +2,7 @@ package tws.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -17,8 +18,12 @@ public interface ParkingBoyMapper {
 
 	// OFFSET 5 ROWS FETCH NEXT 10 ROWS ONLY
 	@Select("select * from parkingBoy offset #{startNum} ROWS FETCH NEXT #{pageSize} ROWS ONLY")
-	public List<ParkingBoy> selectAllParkingBoysBypage(@Param("startNum")int startNum,@Param("pageSize") int pageSize);
+	public List<ParkingBoy> selectAllParkingBoysBypage(@Param("startNum") int startNum,
+			@Param("pageSize") int pageSize);
 
 	@Select("select * from parkinglot where parkingboy_id = #{parkingboy_id}")
 	public List<ParkingLot> selectParkingBoyParkingLots(@Param("parkingboy_id") int parkingboy_id);
+
+	@Insert("insert into parkingboy values(#{parkingBoy.parkingBoyId},#{parkingBoy.parkingBoyName},#{parkingBoy.parkingBoyAge})")
+	public void addParkingBoy(@Param("parkingBoy") ParkingBoy parkingBoy);
 }
