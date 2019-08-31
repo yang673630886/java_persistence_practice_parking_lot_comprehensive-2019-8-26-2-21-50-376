@@ -15,6 +15,15 @@ CREATE TABLE `parkingboy` (
 -- ----------------------------
 INSERT INTO `parkingboy` VALUES ('1', 'xiexinfang', '18');
 INSERT INTO `parkingboy` VALUES ('2', 'caoyupeng', '18');
+INSERT INTO `parkingboy` VALUES ('3', 'xiexinfang', '18');
+INSERT INTO `parkingboy` VALUES ('4', 'caoyupeng', '18');
+INSERT INTO `parkingboy` VALUES ('5', 'xiexinfang', '18');
+INSERT INTO `parkingboy` VALUES ('6', 'caoyupeng', '18');
+INSERT INTO `parkingboy` VALUES ('7', 'xiexinfang', '18');
+INSERT INTO `parkingboy` VALUES ('8', 'caoyupeng', '18');
+INSERT INTO `parkingboy` VALUES ('9', 'xiexinfang', '18');
+INSERT INTO `parkingboy` VALUES ('10', 'caoyupeng', '18');
+INSERT INTO `parkingboy` VALUES ('11', 'caoyupeng', '18');
 
 -- ----------------------------
 -- Table structure for `parkinglot`
