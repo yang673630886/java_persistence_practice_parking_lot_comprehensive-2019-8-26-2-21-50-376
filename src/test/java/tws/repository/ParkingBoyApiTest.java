@@ -20,36 +20,36 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 public class ParkingBoyApiTest {
-	
+
 	@Autowired
-    private MockMvc mockMvc;
-	
+	private MockMvc mockMvc;
+
 	@Autowired
 	private ObjectMapper ObjectMapper;
-	
+
 	@Test
 	public void shoud_return_service_addParkingBoy_when_controller_addParkingBoy_given_url() throws Exception {
-		
-		ParkingBoy parkingBoy =  new ParkingBoy(30,"aaa",22);
-		String postString =ObjectMapper.writeValueAsString(parkingBoy);
-		//when
-		
-		this.mockMvc.perform(MockMvcRequestBuilders
-		        .post("/parkingboys")
-		        .contentType(MediaType.APPLICATION_JSON)
-		        .content(postString))
-        .andDo(print()).andExpect(status().isCreated());
-//		
-//		MockMvcRequestBuilders
-//        .post("/employees")
-//        .contentType(MediaType.APPLICATION_JSON)
-//        .content(postString)
-		
+		// given
+		ParkingBoy parkingBoy = new ParkingBoy(30, "aaa", 22);
+		String postString = ObjectMapper.writeValueAsString(parkingBoy);
+		// when
+		this.mockMvc.perform(
+				MockMvcRequestBuilders.post("/parkingboys").contentType(MediaType.APPLICATION_JSON).content(postString))
+				.andDo(print()).andExpect(status().isCreated());
+
+	}
+
+	@Test
+	public void shoud_return_service_findAllParkingBoys_when_controller_selectAllParkingBoys_given_url()
+			throws Exception {
+		// given
+		// when
+		this.mockMvc.perform(MockMvcRequestBuilders.get("/parkingboys")).andDo(print()).andExpect(status().isOk());
+
 	}
 
 }
