@@ -33,5 +33,11 @@ public class ParkingBoyService {
 		
 		return parkingBoyMapper.selectAllParkingBoysBypage(startNum,pageSize);
 	}
+	
+	public String addParkingBoy() {
+		return null;
+		
+		
+	}
 
 }
