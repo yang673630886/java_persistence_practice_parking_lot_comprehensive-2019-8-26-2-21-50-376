@@ -4,6 +4,16 @@ public class ParkingBoy {
 	private int parkingBoyId;
 	private String parkingBoyName;
 	private int parkingBoyAge;
+	
+	public ParkingBoy() {}
+	
+	public ParkingBoy(int parkingBoyId, String parkingBoyName, int parkingBoyAge) {
+
+		this.parkingBoyId = parkingBoyId;
+		this.parkingBoyName = parkingBoyName;
+		this.parkingBoyAge = parkingBoyAge;
+	}
+
 
 	public int getParkingBoyId() {
 		return parkingBoyId;
@@ -29,11 +39,6 @@ public class ParkingBoy {
 		this.parkingBoyAge = parkingBoyAge;
 	}
 
-	public ParkingBoy(int parkingBoyId, String parkingBoyName, int parkingBoyAge) {
-
-		this.parkingBoyId = parkingBoyId;
-		this.parkingBoyName = parkingBoyName;
-		this.parkingBoyAge = parkingBoyAge;
-	}
+	
 
 }
